@@ -49,8 +49,13 @@ function pagoProducto(){
 }
 // hacer flecha
 function elegirCuotas() {
-    let cuotas = prompt("Elija cantidad de cuotas: ")
-    return cuotas
+    let cuotas = prompt("Elija cantidad de cuotas (3,6 o 12): ")
+    if (cuotas == "3" || cuotas == "6" || cuotas == "12") {
+        return cuotas
+    } else{
+        console.log("Cantidad de cuotas errónea, vuelva a intentar")
+        elegirCuotas()
+    }
 }
 function valorCuotas(precio){
     precioPorCuota = precioFinal / precio
